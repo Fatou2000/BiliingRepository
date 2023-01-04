@@ -1,0 +1,322 @@
+<!Doctype html>
+<html th:lang="${#locale.language}" lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <!--<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Facture</title>
+        <style>
+            .head {
+                background-color: #b2e5db;
+                padding: 0%;
+            }
+            
+            .container {
+                font-size: 12px;
+                background-color: white;
+            }
+            
+            .righthead {
+                display: flex;
+            }
+            
+            .left_head {
+                padding: 0px 20px;
+            }
+            
+            .reference_bill {
+                background-color: #339682;
+                width: 304px;
+                height: 76px;
+                color: white;
+                font-size: 18px;
+                margin: 0 0 20px 162px;
+                padding: 37px 34px 14px 22px;
+            }
+            .haut{
+                margin: 0 59px 0 0;
+                font-family: Manrope;
+                padding: 20px;
+            }
+            
+            .info_client th {
+                color: #339682;
+            }
+            
+            .table {
+                width: 100%;
+                text-align: left;
+            }
+            
+            .date {
+                display: flex;
+                background-color: #b2e5db;
+                justify-content: space-around;
+            }
+            
+            .value {
+                color: #263238;
+            }
+            
+            .title {
+                color: #339682;
+            }
+            
+            .info_client {
+                background-color: #b2e5db;
+                padding: 10px 30px;
+                text-align: left;
+            }
+            
+            .operation_table {
+                padding: 50px;
+            }
+            
+            .operation_table .table th {
+                color: #339682;
+                padding-bottom: 3px;
+            }
+            
+            .operation_table td {
+                padding: 10px 0px;
+            }
+            
+            .operation_table table {
+                border-collapse: collapse;
+            }
+            
+            .operation_table th {
+                border-bottom: 1px solid #339682;
+            }
+            
+            .result_table table {
+                border-collapse: collapse;
+                text-align: left;
+            }
+            #result{
+                margin-left: 100px;
+            }
+            
+            .result_table tbody {
+                border-top: 2px solid black;
+            }
+            
+            .result_table {
+                float: right;
+                padding: 10px 0px 10px 40px;
+                width: 50%;
+                background-color: white;
+            }
+            
+            .result_table td {
+                float: right;
+                text-align: right;
+                color: black;
+            }
+            
+            .result_table table tr {
+                padding: 15px 0px;
+                color: black;
+            }
+            
+            .details {
+                float: right;
+                padding: 10px 0px 10px 40px;
+                width: 50%;
+                background-color: white;
+                padding: 15px 0px;
+            }
+            
+            .table-condensed {
+                background-color: #b2e5db;
+            }
+             .details th,td{
+                color: black;
+             }            
+        </style>
+    </head>
+    <body>
+        <div class="container " style="width: 100%;"  >
+            <div  class="row">
+                <div class="table-responsive">
+                    <div  class="table-responsive custom_datatable">
+                        <table class="table table-borderless table-sm table-condensed">
+                            <tbody>
+                                <tr class="head">
+                                    <td rowspan="4" colspan="6">
+                                        <div class="left_head">
+                                            <img src="/img/ganeyi.png" alt="ganeyi icon">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <table class="table table-sm reference_bill">
+                                            <thead>
+                                                <tr >
+                                                    <th class="haut" scope="col"> FACTURE</th>
+                                                    <th class="haut" scope="col">#<span th:text="${facture.numero}"></span></th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table class="table table-sm info_client">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Date d'émission</th>
+                                                    <th scope="col">Echeance</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td style="color:black;"><span th:text="${facture.date}"></span></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table class="table table-sm info_client table-borderless">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">De</th>
+                                                    <th scope="col">A</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><strong>Ganeyi</strong></td>
+                                                    <td><strong><span th:text="${facture.client.firstName}"></span></strong></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div>123 Rue Amadou</div>
+                                                        <div>Lamine NDIAYE, Quartier</div>
+                                                        <div>Dakar, Sénégal</div>
+    
+                                                    </td>
+                                                    <td> <span th:text="${facture.client.address}"></span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table class="table table-sm info_client table-borderless">
+                                            <thead>
+                                                <th>NINEA</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>13620519</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="modal-body operation_table">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th colspan="3">Produit</th>
+                                        <th style="width: 200px;">Coût</th>
+                                        <th style="width: 200px;">Qt</th>
+                                        <th style="width: 200px; text-align: right;">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="item: ${facture.products}">
+                                        <td><span th:text="${item.name}" ><span/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="result_table">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" width="550px">SOUS-TOTAL</th>
+                                        <td><span th:text = "${facture.sousTotal}"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">RABAIS(20%)</th>
+                                        <td><span th:text = "${facture.rabais}"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">TVA(20%)</th>
+                                        <td><span th:text = "${facture.tva}"></span></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">MONTANT TOTAL</th>
+                                        <td><span th:text = "${facture.total}"></span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+    
+                        <div class=" result_table" id="result">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" width="550px">NET A PAYER</th>
+                                        <td><span th:text = "${facture.total}"></span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="details">
+                            <table class="table table-borderless">
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="4" colspan="5">
+                                            <img src="/img/baamtu.png" alt="baamtu logo">
+                                        </td>
+                                        <td>
+                                            <table>
+                                                <tbody>
+                                                    <thead>
+                                                        <tr>
+                                                            <th width="200px">Détails de banque</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tr>
+                                                        <td>Banque</td>
+                                                        <td>BICIS</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Nom de Compte</td>
+                                                        <td>Baamtu datamation</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Code</td>
+                                                        <td>04-00-75</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Numéro de Compte</td>
+                                                        <td>61323438</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+    </body>
+</html>

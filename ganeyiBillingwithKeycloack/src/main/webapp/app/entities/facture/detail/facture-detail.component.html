@@ -1,0 +1,85 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="facture">
+      <h2 data-cy="factureDetailsHeading"><span jhiTranslate="billingwithkeycloackApp.facture.detail.title">Facture</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ facture.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="billingwithkeycloackApp.facture.rabais">Rabais</span></dt>
+        <dd>
+          <span>{{ facture.rabais }}</span>
+        </dd>
+        <dt><span jhiTranslate="billingwithkeycloackApp.facture.tva">Tva</span></dt>
+        <dd>
+          <span>{{ facture.tva }}</span>
+        </dd>
+        <dt><span jhiTranslate="billingwithkeycloackApp.facture.sousTotal">Sous Total</span></dt>
+        <dd>
+          <span>{{ facture.sousTotal }}</span>
+        </dd>
+        <dt><span jhiTranslate="billingwithkeycloackApp.facture.total">Total</span></dt>
+        <dd>
+          <span>{{ facture.total }}</span>
+        </dd>
+        <dt><span jhiTranslate="billingwithkeycloackApp.facture.typeFacturation">Type Facturation</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'billingwithkeycloackApp.TypeFacturation.' + facture.typeFacturation }}">{{
+            facture.typeFacturation
+          }}</span>
+        </dd>
+        <dt><span jhiTranslate="billingwithkeycloackApp.facture.status">Status</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'billingwithkeycloackApp.FactureStatus.' + facture.status }}">{{ facture.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="billingwithkeycloackApp.facture.reference">Reference</span></dt>
+        <dd>
+          <span>{{ facture.reference }}</span>
+        </dd>
+        <dt><span jhiTranslate="billingwithkeycloackApp.facture.date">Date</span></dt>
+        <dd>
+          <span>{{ facture.date | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="billingwithkeycloackApp.facture.numero">Numero</span></dt>
+        <dd>
+          <span>{{ facture.numero }}</span>
+        </dd>
+        <dt><span jhiTranslate="billingwithkeycloackApp.facture.forfait">Forfait</span></dt>
+        <dd>
+          <div *ngIf="facture.forfait">
+            <a [routerLink]="['/forfait', facture.forfait.id, 'view']">{{ facture.forfait.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="billingwithkeycloackApp.facture.client">Client</span></dt>
+        <dd>
+          <div *ngIf="facture.client">
+            <a [routerLink]="['/client', facture.client.id, 'view']">{{ facture.client.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="billingwithkeycloackApp.facture.product">Product</span></dt>
+        <dd>
+          <span *ngFor="let product of facture.products; let last = last">
+            <a [routerLink]="['/product', product.id, 'view']">{{ product.name }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/facture', facture.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

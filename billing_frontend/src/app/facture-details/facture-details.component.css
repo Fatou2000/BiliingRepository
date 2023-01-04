@@ -1,0 +1,128 @@
+.head {
+    background-color: #b2e5db;
+    padding: 0%;
+}
+
+.container {
+    font-size: 12px;
+    background-color: white;
+}
+
+.righthead {
+    display: flex;
+}
+
+.left_head {
+    padding: 0px 20px;
+}
+
+.reference_bill {
+    background-color: #339682;
+    width: 304px;
+    height: 76px;
+    color: white;
+    font-size: 18px;
+    margin: 0 0 20px 162px;
+    padding: 37px 34px 14px 22px;
+}
+.haut{
+    margin: 0 59px 0 0;
+    font-family: Manrope;
+    padding: 20px;
+}
+
+.info_client th {
+    color: #339682;
+}
+
+.table {
+    width: 100%;
+    text-align: left;
+}
+
+.date {
+    display: flex;
+    background-color: #b2e5db;
+    justify-content: space-around;
+}
+
+.value {
+    color: #263238;
+}
+
+.title {
+    color: #339682;
+}
+
+.info_client {
+    background-color: #b2e5db;
+    padding: 10px 30px;
+    text-align: left;
+}
+
+.operation_table {
+    padding: 50px;
+}
+
+.operation_table .table th {
+    color: #339682;
+    padding-bottom: 3px;
+}
+
+.operation_table td {
+    padding: 10px 0px;
+}
+
+.operation_table table {
+    border-collapse: collapse;
+}
+
+.operation_table th {
+    border-bottom: 1px solid #339682;
+}
+
+.result_table table {
+    border-collapse: collapse;
+    text-align: left;
+}
+#result{
+    margin-left: 100px;
+}
+
+.result_table tbody {
+    border-top: 2px solid black;
+}
+
+.result_table {
+    float: right;
+    padding: 10px 0px 10px 40px;
+    width: 50%;
+    background-color: white;
+}
+
+.result_table td {
+    float: right;
+    text-align: right;
+    color: black;
+}
+
+.result_table table tr {
+    padding: 15px 0px;
+    color: black;
+}
+
+.details {
+    float: right;
+    padding: 10px 0px 10px 40px;
+    width: 50%;
+    background-color: white;
+    padding: 15px 0px;
+}
+
+.table-condensed {
+    background-color: #b2e5db;
+}
+ .details th,td{
+    color: black;
+ }
+ 

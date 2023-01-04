@@ -1,0 +1,40 @@
+{
+  "applications": ["Billingwithkeycloack"],
+  "changelogDate": "20221205182518",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "api",
+  "fields": [
+    {
+      "fieldName": "version",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "serviceURL",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "docURL",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActice",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Api",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "api",
+      "relationshipName": "product",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": false,
+  "service": "serviceImpl"
+}

@@ -1,0 +1,63 @@
+{
+  "applications": ["Billingwithkeycloack"],
+  "changelogDate": "20221205181818",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "product",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "logo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "Double"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Product",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "api",
+      "otherEntityRelationshipName": "product",
+      "relationshipName": "api",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "request",
+      "otherEntityRelationshipName": "product",
+      "relationshipName": "request",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "productLicense",
+      "otherEntityRelationshipName": "product",
+      "relationshipName": "productLicense",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "client",
+      "otherEntityRelationshipName": "product",
+      "ownerSide": false,
+      "relationshipName": "client",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": false,
+  "service": "serviceImpl"
+}

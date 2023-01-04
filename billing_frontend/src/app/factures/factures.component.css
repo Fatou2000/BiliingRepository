@@ -1,0 +1,68 @@
+.nav{
+    z-index:3;width:300px;
+    font-weight:bold;background-color: #339682;
+    color: white; 
+    border-radius: 13px; padding: 22px 8px 600px 0;
+    margin: 10px 33px 10px 20px;
+}
+.main{
+    margin-left:340px;
+    margin-right:40px;
+    box-shadow: 0 2.9px 87.8px 0 rgba(58, 86, 78, 0.07);
+}
+.factures{
+    margin-top:80px;
+}
+.header{
+    background-color: #339682;
+}
+.img{
+    width: 50px; 
+    height: 50px;
+    margin: 50px 1px 20px 0;
+}
+.ganeyi{
+    float: right;
+    margin: 0 51px 29px 0;
+    font-size: 35px;
+}
+.barre{
+    width:50px;
+    border:5px solid  #339682;
+}
+.searchandfilter{
+    margin-bottom:50px;
+}
+.filter{
+    float: left;
+    padding: 6px;
+    border-radius:10px;
+    margin-top: 8px;
+    font-size: 17px;
+}
+.search{
+    float: right;
+    padding: 6px; 
+    border-radius: 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+}
+.labels{
+    color: #339682;
+    font-size: larger;
+}
+.status{
+    display: flex;
+    flex-direction: row; 
+    width:110px;
+}
+.boutonvoir{
+    font-size:x-small; 
+    color:#339682;
+}
+.boutonpayer,.boutontelecharger{
+    background-color: #339682;
+    color: white;
+    font-size: x-small;
+}
